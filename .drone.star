@@ -150,6 +150,7 @@ def linux(ctx, arch):
         'pull': 'always',
         'environment': {
           'CGO_ENABLED': '0',
+          'GO111MODULE': 'on',
         },
         'commands': build,
       },
@@ -227,6 +228,7 @@ def windows(ctx, version):
         'name': 'build',
         'environment': {
           'CGO_ENABLED': '0',
+          'GO111MODULE': 'on',
         },
         'commands': build,
       },
