@@ -1,4 +1,4 @@
-FROM plugins/base:muliarch
+FROM plugins/base:multiarch
 
 LABEL maintainer="Drone.IO Community <drone-dev@googlegroups.com>" \
   org.label-schema.name="Drone CurseForge" \
