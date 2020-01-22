@@ -1,4 +1,4 @@
-release/
+/release/
+/drone-curseforge
 
 coverage.out
-drone-curseforge
