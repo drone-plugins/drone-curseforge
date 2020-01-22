@@ -24,6 +24,7 @@ func main() {
 	app := cli.NewApp()
 	app.Name = "drone-curseforge"
 	app.Usage = "publish files to curseforge"
+	app.Version = version
 	app.Action = run
 	app.Flags = append(settingsFlags(), urfave.Flags()...)
 
