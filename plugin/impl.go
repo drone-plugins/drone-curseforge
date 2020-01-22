@@ -20,6 +20,11 @@ import (
 	"github.com/sirupsen/logrus"
 )
 
+const (
+	uploadURL   = "https://minecraft.curseforge.com/api/projects/%d/upload-file"
+	forgesvcURL = "https://addons-ecs.forgesvc.net/api/v2/addon/%d"
+)
+
 // Settings for the plugin.
 type Settings struct {
 	APIKey    string
@@ -113,7 +118,7 @@ func (p *Plugin) Execute() error {
 	req, err := http.NewRequest(
 		"POST",
 		fmt.Sprintf(
-			"https://minecraft.curseforge.com/api/projects/%d/upload-file",
+			uploadURL,
 			p.settings.Project,
 		),
 		content,
@@ -221,7 +226,7 @@ func (p *Plugin) metadata() ([]byte, error) {
 		for _, file := range manifest.Files {
 			resp, err := p.network.Client.Get(
 				fmt.Sprintf(
-					"https://addons-ecs.forgesvc.net/api/v2/addon/%d",
+					forgesvcURL,
 					file.ProjectID,
 				),
 			)
