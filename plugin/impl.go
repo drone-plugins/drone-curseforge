@@ -10,7 +10,6 @@ import (
 	"encoding/json"
 	"fmt"
 	"io"
-	"io/ioutil"
 	"mime/multipart"
 	"net/http"
 	"os"
@@ -142,7 +141,7 @@ func (p *Plugin) Execute() error {
 	}
 
 	defer resp.Body.Close()
-	body, err := ioutil.ReadAll(resp.Body)
+	body, err := io.ReadAll(resp.Body)
 
 	if err != nil {
 		return errors.WithFields("failed to read request", logrus.Fields{
@@ -240,7 +239,7 @@ func (p *Plugin) metadata() ([]byte, error) {
 				continue
 			}
 
-			body, err := ioutil.ReadAll(resp.Body)
+			body, err := io.ReadAll(resp.Body)
 
 			if err != nil {
 				logrus.WithError(err).WithFields(logrus.Fields{
