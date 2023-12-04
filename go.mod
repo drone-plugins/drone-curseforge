@@ -3,7 +3,7 @@ module github.com/drone-plugins/drone-curseforge
 go 1.19
 
 require (
-	github.com/drone-plugins/drone-plugin-lib v0.4.0
+	github.com/drone-plugins/drone-plugin-lib v0.4.2
 	github.com/sirupsen/logrus v1.9.0
 	github.com/urfave/cli/v2 v2.23.7
 )
