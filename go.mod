@@ -2,6 +2,8 @@ module github.com/drone-plugins/drone-curseforge
 
 go 1.19
 
+toolchain go1.26.10
+
 require (
 	github.com/drone-plugins/drone-plugin-lib v0.4.0
 	github.com/sirupsen/logrus v1.9.0
